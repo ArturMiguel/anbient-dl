@@ -1,6 +1,6 @@
 {
   "name": "anbient-dl",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Download de animes da lista plana do site Anbient.",
   "main": "index.js",
   "scripts": {
