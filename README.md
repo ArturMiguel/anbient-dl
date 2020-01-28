@@ -1,3 +1,9 @@
+<div>
+    <a href='https://www.npmjs.com/package/anbient-dl'>
+        <img src='https://img.shields.io/npm/v/anbient-dl?color=orange&label=npm' alt='anbient-dl-version'>
+    </a>
+</div>
+
 # Anbient downloader
 
 Baixe animes da lista plana do site [Anbient](https://www.anbient.com/).
@@ -14,7 +20,7 @@ Baixe animes da lista plana do site [Anbient](https://www.anbient.com/).
 - `-h, --help` informações de ajuda.
 
 ## Exemplos
-`dl -i https://www.anbient.com/Tv/another -o C:\Users\Artur\Desktop\Another`
+`dl -i https://www.anbient.com/Tv/another -o C:\Users\User\Desktop\Another`
 
 `dl -i https://www.anbient.com/anime/Kono-Subarashii-Sekai-ni-Shukufuku-wo -o "C:\Users\User\Desktop\Kono Subarashii Sekai ni Shukufuku o!"` (diretório com espaços)
 
