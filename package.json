@@ -1,0 +1,36 @@
+{
+  "name": "anbient-dl",
+  "version": "1.0.0",
+  "description": "Download de animes da lista plana do site Anbient.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "dl": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArturMiguel/anbient-dl.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "Scraping",
+    "Anbient",
+    "Downloader"
+  ],
+  "author": "Artur Miguel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArturMiguel/anbient-dl/issues"
+  },
+  "homepage": "https://github.com/ArturMiguel/anbient-dl#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^4.1.0",
+    "ora": "^4.0.3",
+    "progress": "^2.0.3",
+    "puppeteer": "^2.1.0",
+    "request": "^2.88.0"
+  }
+}
