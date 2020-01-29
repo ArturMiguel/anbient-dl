@@ -1,22 +1,30 @@
 #!/usr/bin/env node
 
-const args = require('commander')
+const cli = require('commander')
 const fs = require('fs')
 const colors = require('colors')
 const { download } = require('./lib/download')
-const { name, version } = require('./package.json')
+const { version } = require('./package.json')
+require('./lib/notifier').notifier
 
-args
-.name(name)
-.version(version)
-.option('-i, --input <input>', '(necessário) anbient url')
-.option('-o, --output <output>', '(necessário) diretório de saída')
+cli
+.name('dl')
+.version(version, '-v, --version', 'versão atual.')
+.usage('-i <input> -o <output>')
+.option('-i, --input <input>', '(necessário) anbient url.')
+.option('-o, --output <output>', '(necessário) diretório de saída.')
+.helpOption('-h, --help', 'informações de ajuda.')
+.on('--help', () => console.log('\nRepo: https://github.com/ArturMiguel/anbient-dl\n'))
 .parse(process.argv)
 
-const { input, output } = args;
+const { input, output } = cli
 if (input && output) {
-    if(!fs.existsSync(output)) console.log(colors.red(`Diretório não existe "${output}"`))
-    else download(input, output)
+    if(!fs.existsSync(output)) {
+        console.log(colors.red(`Diretório inválido "${output}"`))
+        process.exit(1)
+    }
+    download(input, output)
 } else {
-    console.log(colors.red('--input e --output são necessários. Digite --help para ajuda.'))
+    console.log(colors.red('--input e --output são necessários. Use --help para ajuda.'))
+    process.exit(1)
 }

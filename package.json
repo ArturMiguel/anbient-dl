@@ -1,7 +1,7 @@
 {
   "name": "anbient-dl",
-  "version": "1.0.3",
-  "description": "Download de animes da lista plana do site Anbient.",
+  "version": "1.1.0",
+  "description": "Gerenciador de downloads para o site Anbient.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -31,6 +31,7 @@
     "ora": "^4.0.3",
     "progress": "^2.0.3",
     "puppeteer": "^2.1.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "update-notifier": "^4.0.0"
   }
 }
