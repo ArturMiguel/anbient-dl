@@ -2,11 +2,14 @@
     <a href='https://www.npmjs.com/package/anbient-dl'>
         <img src='https://img.shields.io/npm/v/anbient-dl?color=orange&label=npm' alt='anbient-dl-version'>
     </a>
+    <a href='https://www.npmjs.com/package/anbient-dl'>
+        <img src='https://img.shields.io/npm/dt/anbient-dl' alt='anbient-dl-downloads'>
+    </a>
 </div>
 
-# Anbient downloader
+# anbient-dl
 
-Baixe de forma fácil os animes da lista plana do site [Anbient](https://www.anbient.com/).
+Baixe facilmente os animes do site [Anbient](https://www.anbient.com/).
 
 ![imagem-não-encontrada](https://i.imgur.com/bpszYqW.png)
 
@@ -19,13 +22,13 @@ Baixe de forma fácil os animes da lista plana do site [Anbient](https://www.anb
 - `-o, --output` (necessário) diretório de saída. 
 - `-h, --help` informações de ajuda.
 
-## Exemplos
+### Exemplos
 `dl -i https://www.anbient.com/Tv/another -o C:\Users\User\Desktop\Another`
 
 `dl -i https://www.anbient.com/tv/Noragami-2 -o "C:\Users\User\Desktop\Noragami Aragoto"` (aspas em diretórios com espaços)
 
 ## Comentários
-
 - A versão atual não é estável.
-- Por agora, apenas *links* do Zippyshare são suportados.
+- Por agora, apenas animes com *links* do [Zippyshare](https://zippyshare.com/) são suportados.
 - O projeto realiza *[web scraping](https://pt.wikipedia.org/wiki/Coleta_de_dados_web)*; use com moderação.
+- Página para apoiar o Anbient: https://www.anbient.com/doar

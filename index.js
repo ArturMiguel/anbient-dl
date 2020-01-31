@@ -14,12 +14,12 @@ cli
 .option('-i, --input <input>', '(necessário) anbient url.')
 .option('-o, --output <output>', '(necessário) diretório de saída.')
 .helpOption('-h, --help', 'informações de ajuda.')
-.on('--help', () => console.log('\nRepo: https://github.com/ArturMiguel/anbient-dl\n'))
+.on('--help', () => console.log('\nRepo: https://github.com/ArturMiguel/anbient-dl'))
 .parse(process.argv)
 
 const { input, output } = cli
 if (input && output) {
-    if(!fs.existsSync(output)) {
+    if (!fs.existsSync(output)) {
         console.log(colors.red(`Diretório inválido "${output}"`))
         process.exit(1)
     }
