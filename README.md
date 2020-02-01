@@ -28,7 +28,6 @@ Baixe facilmente os animes do site [Anbient](https://www.anbient.com/).
 `dl -i https://www.anbient.com/tv/Noragami-2 -o "C:\Users\User\Desktop\Noragami Aragoto"` (aspas em diretórios com espaços)
 
 ## Comentários
-- A versão atual não é estável.
 - Por agora, apenas animes com *links* do [Zippyshare](https://zippyshare.com/) são suportados.
 - O projeto realiza *[web scraping](https://pt.wikipedia.org/wiki/Coleta_de_dados_web)*; use com moderação.
 - Página para apoiar o Anbient: https://www.anbient.com/doar
