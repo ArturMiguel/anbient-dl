@@ -9,16 +9,16 @@
 
 # anbient-dl
 
-Baixe facilmente os animes do site [Anbient](https://www.anbient.com/).
+Baixe em `.mp4` os animes do site [Anbient](https://www.anbient.com/).
 
-![imagem-não-encontrada](https://i.imgur.com/bpszYqW.png)
+![imagem-não-encontrada](https://i.imgur.com/G60wJQY.png)
 
 ## Instalação
 `npm install -g anbient-dl`
 
 ## CLI 
 - `-v, --version` versão atual.
-- `-i, --input` (necessário) anbient url.
+- `-i, --input` (necessário) Anbient url.
 - `-o, --output` (necessário) diretório de saída. 
 - `-h, --help` informações de ajuda.
 
@@ -29,5 +29,5 @@ Baixe facilmente os animes do site [Anbient](https://www.anbient.com/).
 
 ## Comentários
 - Por agora, apenas animes com *links* do [Zippyshare](https://zippyshare.com/) são suportados.
-- O projeto realiza *[web scraping](https://pt.wikipedia.org/wiki/Coleta_de_dados_web)*; use com moderação.
+- O projeto não tem nenhuma relação com os sites utilizados; use com moderação.
 - Página para apoiar o Anbient: https://www.anbient.com/doar

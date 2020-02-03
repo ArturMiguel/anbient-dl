@@ -2,7 +2,6 @@
 
 const cli = require('commander')
 const fs = require('fs')
-const colors = require('colors')
 const { download } = require('./lib/download')
 const { version } = require('./package.json')
 require('./lib/notifier').notifier
@@ -20,11 +19,11 @@ cli
 const { input, output } = cli
 if (input && output) {
     if (!fs.existsSync(output)) {
-        console.log(colors.red(`Diretório inválido "${output}"`))
+        console.log(`Diretório inválido "${output}"`)
         process.exit(1)
     }
     download(input, output)
 } else {
-    console.log(colors.red('--input e --output são necessários. Use --help para ajuda.'))
+    console.log('--input e --output são necessários. Use --help para ajuda.')
     process.exit(1)
 }
