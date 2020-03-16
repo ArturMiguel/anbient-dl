@@ -1,8 +1,13 @@
+<a href='https://www.npmjs.com/package/anbient-dl'>
+    <img src='https://img.shields.io/npm/v/anbient-dl'>
+</a>
+<a href='https://www.npmjs.com/package/anbient-dl'>
+    <img src='https://img.shields.io/npm/dt/anbient-dl'>
+</a>
+
 # anbient-dl
 
-[![npm package](https://nodei.co/npm/anbient-dl.png)](https://nodei.co/npm/anbient-dl/)
-
-Download em `.mp4` dos animes do site Anbient.
+A função do `anbient-dl` é automatizar a coleta das urls de download no Anbient e posteriormente obter os arquivos de cada uma; hospedados no Zippyshare. O formato de saída dos arquivos é `.mp4`.
 
 ## Requisitos
 
@@ -11,7 +16,9 @@ Download em `.mp4` dos animes do site Anbient.
 ## Instalação
 `npm install -g anbient-dl`
 
-## CLI 
+## Utilização
+
+#### CLI
 - `-v, --version` versão atual.
 - `-i, --input` (necessário) Anbient url.
 - `-o, --output` (necessário) diretório de saída. 
@@ -20,10 +27,10 @@ Download em `.mp4` dos animes do site Anbient.
 #### Exemplo
 `dl -i https://www.anbient.com/Tv/another -o C:\Users\User\Desktop\Another`
 
-![exemplo](./assets/example.jpeg)
+![exemplo](https://i.imgur.com/TWNp5O7.jpg)
 
 Obs: Utilize aspas em diretórios com espaços.
 
 ## Aviso legal
 
-Caso você seja proprietário do Anbient ou Zippyshare e considera que o `anbient-dl` viola seus Termos de Serviço e Uso, escreva uma *[issue](https://github.com/ArturMiguel/anbient-dl/issues)* sobre a violação para que eu remova o projeto.
+Caso você seja proprietário do Anbient ou Zippyshare e considera que o `anbient-dl` viola seu Termo de Privacidade, escreva uma *[issue](https://github.com/ArturMiguel/anbient-dl/issues)* sobre a violação.
