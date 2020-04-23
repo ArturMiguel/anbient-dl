@@ -11,7 +11,7 @@ A função do `anbient-dl` é automatizar a coleta das urls de download no Anbie
 
 ## Requisitos
 
-- [Node.js](https://nodejs.org/en/)
+- [Node.js](https://nodejs.org/en/) v12+
 
 ## Instalação
 `npm install -g anbient-dl`
@@ -33,4 +33,4 @@ Obs: Utilize aspas em diretórios com espaços.
 
 ## Aviso legal
 
-Caso você seja proprietário do Anbient ou Zippyshare e considera que o `anbient-dl` viola seu Termo de Privacidade, escreva uma *[issue](https://github.com/ArturMiguel/anbient-dl/issues)* sobre a violação.
+O `anbient-dl` não tem nenhuma relação interna com os sites Anbient e Zippyshare. A utilização da ferramenta poderá ter como consequência a violação dos Termos de Serviço desses sites, sendo assim, o usuário tem total responsabilidade dos resultados consequentes desse uso.
