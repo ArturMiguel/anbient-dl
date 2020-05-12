@@ -2,7 +2,7 @@
 
 const cli = require('commander')
 const fs = require('fs')
-const download = require('./lib/download')
+const download = require('./lib/downloader')
 const { version } = require('./package.json')
 require('./lib/notifier')()
 

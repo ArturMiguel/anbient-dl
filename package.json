@@ -1,7 +1,7 @@
 {
   "name": "anbient-dl",
-  "version": "1.1.7",
-  "description": "Web scraper para download de animes.",
+  "version": "1.1.8",
+  "description": "CLI para download de animes do Anbient/Zippyshare.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,9 +14,10 @@
     "url": "https://github.com/ArturMiguel/anbient-dl.git"
   },
   "keywords": [
-    "Web scraping",
+    "Web-scraper",
     "Anime",
-    "Downloader"
+    "Downloader",
+    "Anbient"
   ],
   "author": "Artur Miguel",
   "license": "MIT",
