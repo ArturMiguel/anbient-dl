@@ -33,12 +33,10 @@ npm install -g anbient-dl
 
 #### Exemplo
 ```
-dl -i https://www.anbient.com/Tv/another -o C:\Users\User\Videos\Another
+dl -i https://www.anbient.com/Tv/another -o "C:\Users\User\Videos\Another"
 ```
 
 ![exemplo](https://i.imgur.com/TWNp5O7.jpg)
-
-> Utilize aspas em diretórios com espaços.
 
 ## Aviso legal
 

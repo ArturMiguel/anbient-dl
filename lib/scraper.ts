@@ -4,11 +4,8 @@ import colors from 'colors';
 import request from 'request';
 import fs from 'fs';
 import progressBar from './progressBar';
-
-interface Episode {
-    name: string;
-    url: string;
-}
+import { Episode } from '../models/Episode';
+import episodeSelection from './episode-selection'
 
 export default async (animeURL: string, outputDir: string) => {
     const spinner = ora(colors.cyan(`Consultando ${animeURL}`)).start();
@@ -32,64 +29,69 @@ export default async (animeURL: string, outputDir: string) => {
             waitUntil: 'load'
         });
 
-        const episodeURLs = await page.$$eval('.servidor.zippyshare > li > a', (elements) => elements.map((element) => element.getAttribute('href')));
+        const episodeURLs = await page.$$eval('.servidor.zippyshare > li > a', (elements: Element[]) => {
+            return elements.map(element => element.getAttribute('href'));
+        });
 
         if (!episodeURLs.length) {
             spinner.fail('Nenhum episódio encontrado no servidor Zippyshare!');
             process.exit(1);
         }
 
-        const animeName = await page.$eval('#page-title', (element) => element.textContent.replace(/[\\/:*?"<>|]/g, '').replace(/ /g, '_'));
+        const animeName = await page.$eval('#page-title', (element: Element) => element.textContent.replace(/[\\/:*?"<>|]/g, '').replace(/ /g, '_'));
 
-        const episodes: Episode[] = [];
+        spinner.succeed();
 
-        for (const [index, episodeURL] of episodeURLs.entries()) {
+        const episodesTemp: Episode[] = episodeURLs.map((url, index) => {
             const episodeIndex = (index + 1).toString().padStart(2, '0');
+            return {
+                name: `${episodeIndex}_${animeName}.mp4`,
+                url: url
+            }
+        });
 
-            spinner.start(colors.cyan(`Consultando arquivo ${episodeIndex}/${episodeURLs.length.toString().padStart(2, '0')} | ${episodeURL}`));
+        const selectedEpisodes: Episode[] = await episodeSelection(episodesTemp);
+
+        for (const episode of selectedEpisodes) {
+            spinner.start(colors.cyan(`Consultando episódio ${episode.name} | ${episode.url}`));
 
             try {
                 // Scraping Zippyshare
                 blockedResources = ['stylesheet', 'image', 'media', 'font', 'texttrack', 'xhr', 'fetch', 'eventsource', 'websocket', 'manifest', 'other'];
 
-                await page.goto(episodeURL, {
+                await page.goto(episode.url, {
                     waitUntil: 'load'
                 });
 
-                const href = await page.$eval('#dlbutton', (element) => element.getAttribute('href'));
-                const www = `www${episodeURL.split('.')[0].replace(/^\D+/g, '')}`; // http://www92, http://www57, http://www114
-
-                episodes.push({
-                    name: `(${episodeIndex}) ${animeName}.mp4`,
-                    url: `https://${www}.zippyshare.com${href}`
-                });
+                const href = await page.$eval('#dlbutton', (element: Element) => element.getAttribute('href'));
+                const www = `www${episode.url.split('.')[0].replace(/^\D+/g, '')}`; // http://www92, http://www57, http://www114
+                episode.url = `https://${www}.zippyshare.com${href}`;
 
                 spinner.succeed();
             } catch (error) {
                 spinner.fail();
             }
         }
-
         await browser.close();
 
-        // Dowloading episodes
-        const download = (episode: Episode) => new Promise((resolve) => {
-            request(episode.url)
-                .on('response', (response) => {
-                    const fileSize = parseInt(response.headers['content-length']);
-                    const progress = progressBar(fileSize, episode.name);
-
-                    response.on('data', (chunk) => progress.tick(chunk.length));
-                })
-                .pipe(fs.createWriteStream(`${outputDir}/${episode.name}`))
-                .on('close', () => resolve());
-        });
-
-        for (const episode of episodes) await download(episode);
-
+        for (const episode of selectedEpisodes) await download(episode, outputDir);
+        
         process.exit(0);
     } catch (error) {
         spinner.fail(error.message);
         process.exit(1);
     }
 };
+
+function download(episode: Episode, outputDir: string) {
+    return new Promise((resolve) => {
+        request(episode.url)
+        .on('response', (response) => {
+            const fileSize = parseInt(response.headers['content-length']);
+            const progress = progressBar(fileSize, episode.name);
+            response.on('data', (chunk) => progress.tick(chunk.length));
+        })
+        .pipe(fs.createWriteStream(`${outputDir}/${episode.name}`))
+        .on('close', () => resolve());
+    });
+}
