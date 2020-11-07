@@ -36,7 +36,19 @@ npm install -g anbient-dl
 dl -i https://www.anbient.com/Tv/another -o "C:\Users\User\Videos\Another"
 ```
 
-![exemplo](https://i.imgur.com/TWNp5O7.jpg)
+<img src='./assets/downloading.jpg'>
+
+## Versão Beta
+
+Na versão `1.2.0-beta.0` está incluído um menu para selecionar os episódios que deseja baixar:
+
+<img src='./assets/menu.jpg'>
+
+A utilização continua a mesma, para instalar, digite:
+
+```
+npm install -g anbient-dl@beta
+```
 
 ## Aviso legal
 
