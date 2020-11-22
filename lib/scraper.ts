@@ -4,7 +4,7 @@ import colors from 'colors';
 import request from 'request';
 import fs from 'fs';
 import progressBar from './progressBar';
-import { Episode } from '../models/Episode';
+import { Episode } from './models/Episode';
 import episodeSelection from './episode-selection'
 
 export default async (animeURL: string, outputDir: string) => {
@@ -74,7 +74,7 @@ export default async (animeURL: string, outputDir: string) => {
     }
     await browser.close();
 
-    for (const episode of selectedEpisodes) await download(episode, outputDir);
+    for await (const episode of selectedEpisodes) await download(episode, outputDir);
 
     process.exit(0);
   } catch (error) {

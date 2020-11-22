@@ -7,13 +7,19 @@
 
 # anbient-dl
 
-A função do `anbient-dl` é automatizar a coleta das urls de download no Anbient e posteriormente obter os arquivos de cada uma; hospedados no Zippyshare. O formato de saída dos arquivos é `.mp4`.
+A função do `anbient-dl` é automatizar o *download* dos animes listados no site Anbient e hospedados no Zippyshare. O formato de saída dos arquivos é `.mp4`.
 
-## Requisitos
+## *Features*
 
-- [Node.js](https://nodejs.org/en/) v12
+- *Download* de animes via CLI.
+
+- Menu para selecionar os episódios que deseja baixar.
+
+- Barra de progresso de download.
 
 ## Instalação
+
+> Requer o [Node.js](https://nodejs.org/en/)
 
 ```
 npm install -g anbient-dl
@@ -35,21 +41,9 @@ npm install -g anbient-dl
 ```
 dl -i https://www.anbient.com/Tv/another -o "C:\Users\User\Videos\Another"
 ```
-
-<img src='./assets/downloading.jpg'>
-
-## Versão Beta
-
-Na versão `1.2.0-beta.0` está incluído um menu para selecionar os episódios que deseja baixar:
-
 <img src='./assets/menu.jpg'>
 
-A utilização continua a mesma, para instalar, digite:
-
-```
-npm install -g anbient-dl@beta
-```
 
 ## Aviso legal
 
-O `anbient-dl` não tem nenhuma relação com o Anbient e o Zippyshare. O uso da ferramenta poderá violar os Termos de Serviço desses sites, sendo de total responsabilidade do usuário.
+O `anbient-dl` foi desenvolvido unicamente para facilitar o `download` de animes dos sites Anbient e Zippyshare. O usuário tem total responsabilidade de como irá utilizar o material baixado.

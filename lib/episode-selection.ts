@@ -1,5 +1,5 @@
 import inquirer from 'inquirer';
-import { Episode } from '../models/Episode';
+import { Episode } from './models/Episode';
 
 export default async (episodes: Episode[]) => {
   const selectedEpisodes = await inquirer.prompt([
